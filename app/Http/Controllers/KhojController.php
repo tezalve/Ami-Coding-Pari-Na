@@ -53,8 +53,14 @@ class KhojController extends Controller
                     ->where('user_id', '=', $request->user_id)
                     ->whereBetween('created_at', [$s, $e])
                     ->get();
-                    
-        return $data;
+        
+        $arr = (array) $data;
+        if($data->count()==0){
+            return "No data";
+        } else {
+            return  json_encode($data);
+            // dd($data->all());
+        };
     }
 
 
