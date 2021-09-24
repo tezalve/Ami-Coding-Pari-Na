@@ -35,12 +35,9 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         // dd($request);
-        $arr = $request->all();
-        $object = (object) $arr;
-        // dd($object);
-        
+
         User::create([
-            'name'      => $object->name,
+            'name'      => $request->name,
             'email'     => $request->email,
             'password'  => Hash::make($request->password)
         ]);
@@ -50,10 +47,7 @@ class AuthController extends Controller
     }
 
     public function login(Request $request)
-    {
-        $arr = $request->all();
-        $object = (object) $arr;
-        
+    {   
         if(
             !Auth::attempt([
             'email'     => $request->email,
@@ -68,7 +62,7 @@ class AuthController extends Controller
 
         $token = $user->createToken('token')->plainTextToken;
 
-        $cookie = cookie('jwt', $token, 1); //1 Minute
+        $cookie = cookie('jwt', $token, 60); //60 Minute cookie time
 
 		Session::flash('message', 'Logged In!');
 

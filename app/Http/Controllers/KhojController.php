@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Khoj;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +20,15 @@ class KhojController extends Controller
 		    Session::flash('message', 'Not Logged In!');
             return view('welcome');
         }
-        return view('khoj.search');
+        return view('khoj.search')->with('id', Auth::user()->id);
     }
+
+    public function store(Request $request)
+    {
+        Khoj::create([
+            'sorted'      => $request->input,
+            'user_id'     => $request->user_id
+        ]);
+    }
+
 }
