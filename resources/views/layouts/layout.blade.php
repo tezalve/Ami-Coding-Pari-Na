@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="navbar">
-            <a href="{{ url('/')}}">Start Page</a>
+            <a href="{{ url('/')}}">Home Page</a>
         </div>
         @if(Session::has('message'))
             <p>{{ Session::get('message') }}</p>

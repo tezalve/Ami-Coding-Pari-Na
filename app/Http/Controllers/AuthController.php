@@ -14,12 +14,12 @@ class AuthController extends Controller
 {
     public function user()
     {
+        // check if user is logged in
         if(!Auth::user()){
 		    Session::flash('message', 'Not Logged In!');
             return view('welcome');
         }
-        // dd(Auth::user()->name);
-        return view('auth.user_view')->with('data', Auth::user());
+        return view('auth.user_view')->with('data', Auth::user()); // send user data to view
     }
 
     public function register_view()
@@ -34,22 +34,21 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        // dd($request);
-
+        // create user
         User::create([
             'name'      => $request->name,
             'email'     => $request->email,
             'password'  => Hash::make($request->password)
         ]);
 
-		Session::flash('message', 'Registered!');
+		Session::flash('message', 'Registered!'); //send msg to frontend
         return view('welcome');
     }
 
     public function login(Request $request)
     {   
         if(
-            !Auth::attempt([
+            !Auth::attempt([ // try the credentials
             'email'     => $request->email,
             'password'  => ($request->password)
             ])){
@@ -60,8 +59,9 @@ class AuthController extends Controller
 
         $user = Auth::user();
 
-        $token = $user->createToken('token')->plainTextToken;
+        $token = $user->createToken('token')->plainTextToken; //create token
 
+        //set the token to cookie
         $cookie = cookie('jwt', $token, 60); //60 Minute cookie time
 
 		Session::flash('message', 'Logged In!');
@@ -72,7 +72,7 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $cookie = Cookie::forget('jwt');
+        $cookie = Cookie::forget('jwt'); // delete cookie, which also logs out user
 
 		Session::flash('message', 'Logged Out!');
 

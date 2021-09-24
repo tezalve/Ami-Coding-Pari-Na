@@ -24,7 +24,7 @@ class Authenticate extends Middleware
     public function handle($request, Closure $next, ...$guards)
     {
         if ($jwt = $request->cookie('jwt')) {
-            $request->headers->set('Authorization', 'Bearer ' . $jwt);
+            $request->headers->set('Authorization', 'Bearer ' . $jwt); // set the bearer to our generated token
         } else {
 		    Session::flash('message', 'Not Logged In!');
             return view('welcome');

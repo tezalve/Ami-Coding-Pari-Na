@@ -15,7 +15,7 @@ use App\Http\Controllers\{ AuthController, KhojController };
 |
 */
 
-Route::middleware('auth:sanctum')->group(function (){
+Route::middleware('auth:sanctum')->group(function (){ // restrict routes to logged in user
     Route::get('user',          [AuthController::class, 'user']);
     Route::get('logout',        [AuthController::class, 'logout']);
     Route::get('search',        [KhojController::class, 'search']);

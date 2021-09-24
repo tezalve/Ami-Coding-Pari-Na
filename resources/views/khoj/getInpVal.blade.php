@@ -33,9 +33,11 @@
 @section('script')
     <script src="{{asset('JQuery/jquery-3.6.0.min.js')}}"></script>
     <script>
+        // set min attribute for start date
         $('#start').on('change',(function(e) {
             $('#end').attr("min", $('#start').val());
         }));
+        // set max attribute for end date
         $('#end').on('change',(function(e) {
             $('#start').attr("max", $('#end').val());
         }));
