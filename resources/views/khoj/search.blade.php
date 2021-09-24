@@ -15,13 +15,10 @@
         document.getElementById("btnSubmit").addEventListener("click", function() {
             var x = document.getElementById("input").value;
             var ser = document.getElementById("ser").value;
-            console.log(x);
-            console.log(ser);
-
 
             const arr = x.split(",");
             const temp = [];
-            console.log(arr);
+
             for(var i=0; i<arr.length; i++){
                 if ( isNaN(arr[i]) || arr[i]==""){
                     location.reload();
@@ -29,22 +26,21 @@
                     break;
                 } else {
                     temp[i] = parseInt(arr[i]);
-                    console.log(temp + " is a number");
                 }
             }
+
             var sorted = temp;
             sorted.sort(function(a, b){return b-a});
-            console.log(sorted);
             var str = "" + sorted[0];
+
             for(var i=1; i<sorted.length; i++){
                 str = str + ", " + sorted[i];
             }
-            console.log(str);
+            
             document.getElementById("input_real").value = str;
             for(var i=0; i<sorted.length; i++){
                 if( ser == sorted[i]){
                     document.getElementById("bool").innerHTML = "True";
-                    console.log("here");
                     break;
                 } else {
                     document.getElementById("bool").innerHTML = "False";

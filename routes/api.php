@@ -19,11 +19,14 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('user',          [AuthController::class, 'user']);
     Route::get('logout',        [AuthController::class, 'logout']);
     Route::get('search',        [KhojController::class, 'search']);
+    Route::get('getInp',        [KhojController::class, 'getInp']);
 });
 
 Route::post('register',     [AuthController::class, 'register']);
 Route::post('login',        [AuthController::class, 'login']);
 Route::post('store',        [KhojController::class, 'store']);
+Route::post('getInpVal',    [KhojController::class, 'getInpVal']);
+
 
 
 
