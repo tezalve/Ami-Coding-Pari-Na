@@ -11,7 +11,7 @@
 
             <label class="col-lg-3 control-label">Search Value</label>
             <div class="col-lg-9">
-                <input type="text" id="ser" placeholder="only numbers" class="form-control" required autofocus>
+                <input type="number" id="ser" placeholder="only numbers" class="form-control" required autofocus>
             </div>
 
             <div class="col-lg-12">

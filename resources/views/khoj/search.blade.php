@@ -10,7 +10,7 @@
 @endsection
 
 @section('script')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{asset('JQuery/jquery-3.6.0.min.js')}}"></script>
     <script>
         document.getElementById("btnSubmit").addEventListener("click", function() {
             var x = document.getElementById("input").value;
@@ -24,8 +24,9 @@
             console.log(arr);
             for(var i=0; i<arr.length; i++){
                 if ( isNaN(arr[i]) || arr[i]==""){
-                    alert("Input or search field invalid!");
                     location.reload();
+                    alert("Input or search field invalid!");
+                    break;
                 } else {
                     temp[i] = parseInt(arr[i]);
                     console.log(temp + " is a number");
@@ -51,7 +52,7 @@
             }
         });
     </script>
-    
+
     <script>
         $("#search").submit(function(e) {
 
@@ -69,7 +70,7 @@
                 data: form.serialize(), // serializes the form's elements.
                 success: function(data)
                 {
-                    alert(data); // show response from the php script.
+                    console.log(data);
                 }
             });
         });
