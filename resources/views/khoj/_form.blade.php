@@ -14,7 +14,9 @@
             </div>
 
             <div class="col-lg-12">
-                <input type="submit" id="btnSubmit" class="btn btn-success block btn-flat pull-right" value="Submit">
+                <input type="submit" id="btnSubmit" class="btn btn-success block btn-flat pull-right" value="Khoj">
             </div>
+            <h6 class="padd" id="bool"></h6>
+
         </div>
     </div>

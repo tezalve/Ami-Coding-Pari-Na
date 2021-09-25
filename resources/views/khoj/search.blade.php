@@ -2,8 +2,7 @@
 @section('styles')
     <style>
         .padd{
-            padding-top:    20px !important;
-            padding-bottom: 20px !important;
+            padding: 20px !important;
         }
     </style>
 @endsection
@@ -11,7 +10,6 @@
     <form method="POST" action="{{ url('api/store') }}" id="search">
         @php $form_type ='search' @endphp
         @include('khoj/_form')
-        <h6 class="" id="bool"></h6>
     </form>
 @endsection
 
