@@ -13,7 +13,7 @@ https://laravel.com/docs/8.x/installation
 4. php artisan migrate [in terminal]
 5. php artisan serve [in terminal]
 
-###
+### Sections
 1. "Khoj The Search" is section 2
 2. "Get Input Values" is section 3 
 
