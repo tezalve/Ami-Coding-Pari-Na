@@ -1,17 +1,21 @@
 ## Instructions
 
 ### Installation
-https://laravel.com/docs/7.x/installation
+https://laravel.com/docs/8.x/installation
 1. Install Composer
 2. composer global require laravel/installer [in terminal]
 3. install XAMPP or similar PHP development environment
 
 ### Instruction On running the project
-1. start apache & mysql from the PHP development environment
+1. Start apache & mysql from the PHP development environment
 2. CD to project folder
 3. composer update [in terminal]
-4. php artisan migrate
-5. php artisan serve
+4. php artisan migrate [in terminal]
+5. php artisan serve [in terminal]
+
+###
+1. "Khoj The Search" is section 2
+2. "Get Input Values" is section 3 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
