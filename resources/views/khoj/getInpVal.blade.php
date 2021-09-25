@@ -1,8 +1,5 @@
 @extends('layouts.layout')
 @section('content')
-    <div>
-        <p>the search begins here</p>
-    </div>
     <form method="POST" action="{{ url('api/getInpVal') }}" id="search">
     {{ csrf_field() }}
         <div class="box-body">

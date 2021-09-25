@@ -11,6 +11,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Cookie;
 
+class value {
+    public $inputValue;
+    public $time = "";
+}
+class obj {
+    public $user;
+    public $val = array();
+}
+
 class KhojController extends Controller
 {
     public function search()
@@ -53,13 +62,13 @@ class KhojController extends Controller
                     ->where('user_id', '=', $request->user_id)
                     ->whereBetween('created_at', [$s, $e])
                     ->get();
-        
-        $arr = (array) $data;
+
+        // dd($data[0]);
+                
         if($data->count()==0){
             return "No data";
         } else {
-            return  json_encode($data);
-            // dd($data->all());
+            return $data;
         };
     }
 
