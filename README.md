@@ -1,15 +1,17 @@
 ## Instructions
 
-### Laravel Installation
+### Installation
 https://laravel.com/docs/7.x/installation
 1. Install Composer
-2. composer global require laravel/installer [terminal]
+2. composer global require laravel/installer [in terminal]
+3. install XAMPP or similar PHP development environment
 
-### Instruction On running the code
-1. CD to project folder
-1. composer update on [terminal]
-2. php artisan migrate
-3. php artisan serve
+### Instruction On running the project
+1. start apache & mysql from the PHP development environment
+2. CD to project folder
+3. composer update [in terminal]
+4. php artisan migrate
+5. php artisan serve
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
